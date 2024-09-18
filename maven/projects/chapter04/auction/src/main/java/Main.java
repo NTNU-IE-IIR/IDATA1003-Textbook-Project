@@ -4,30 +4,31 @@
  */
 public class Main {
   public static void main(String[] args) {
-    // Create a labclass with maximum 20 students.
-    LabClass labClass = new LabClass(20);
+   // Create an Auction
+    Auction auction = new Auction();
 
-    // Add some students
-    labClass.enrollStudent(new Student("Lise", "32323"));
-    labClass.enrollStudent(new Student("John", "23232"));
-    labClass.enrollStudent(new Student("Kari", "54545"));
-    labClass.enrollStudent(new Student("Ole", "23232"));
+    // Add some lots to the auction
+    auction.enterLot("Picasso");
+    auction.enterLot("Van Gogh");
+    auction.enterLot("Rembrandt");
+    auction.enterLot("Teapot");
 
-    // Print the number of students in the class
-    System.out.println("Number of students: " + labClass.numberOfStudents());
+    // List all the lots
+    auction.showLots();
 
-    // Set the room number
-    labClass.setRoom("A-123");
+    // Create a bidder
+    Person bidder = new Person("Hans");
 
-    // Set the time and day
-    labClass.setTime("Friday, 10am");
+    // Make some bids
+    auction.makeABid(1, bidder, 100);
 
-    // Set instructor
-    labClass.setInstructor("Mr. Smith");
+    // Show the auction status
+    auction.showLots();
 
-    // Print all enrolled students
-    labClass.printList();
-
+    // Get the bidder of the first lot
+    System.out.println("The name of the highest bidder of lot no 1:");
+    Person person = auction.getLot(1).getHighestBid().getBidder();
+    System.out.println("The bidder of the first lot is: " + person.getName());
 
   }
 }
