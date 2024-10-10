@@ -7,10 +7,10 @@ import org.bluej.animalmonitor.logic.AnimalMonitor;
 /**
  * A simple application for monitoring animal sightings.
  */
-public class AnimalMonitoApp {
+public class AnimalMonitorApp {
 
   private AnimalMonitor animalMonitor;
-  private static final String VERSION = "v2-SNAPSHOT";
+  private static final String VERSION = "v3.1";
 
 
 
@@ -147,6 +147,12 @@ public class AnimalMonitoApp {
     }
   }
 
-
+  /**
+   * Creates a new instance of the AnimalMonitorApp.
+   */
+  public AnimalMonitorApp() {
+    this.animalMonitor = new AnimalMonitor();
+    this.animalMonitor.addSightings("sightings.csv");
+  }
 
 }
