@@ -12,9 +12,8 @@
  * executes the commands that the parser returns.
  *
  * @author Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * @version 7.0
  */
-
 public class Game {
   private Parser parser;
   private Room currentRoom;
@@ -47,11 +46,12 @@ public class Game {
     lab.setExits(outside, office, null, null);
     office.setExits(null, null, null, lab);
 
-    currentRoom = outside;  // start game outside
+    // start game outside
+    currentRoom = outside;
   }
 
   /**
-   * Main play routine.  Loops until end of play.
+   * Main play routine. Loops until end of play.
    */
   public void play() {
     printWelcome();
@@ -195,7 +195,8 @@ public class Game {
       System.out.println("Quit what?");
       return false;
     } else {
-      return true;  // signal that we want to quit
+      // signal that we want to quit
+      return true;
     }
   }
 }

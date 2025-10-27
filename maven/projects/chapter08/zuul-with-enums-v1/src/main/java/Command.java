@@ -14,7 +14,7 @@
  * If the command had only one word, then the second word is <null>.
  *
  * @author Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * @version 7.2
  */
 
 public class Command {
@@ -44,25 +44,30 @@ public class Command {
   }
 
   /**
-   * @return The second word of this command. Returns null if there was no
-   * second word.
+   * Returns null if there was no second word.
+   *
+   * @return The second word of this command.
    */
   public String getSecondWord() {
     return secondWord;
   }
 
   /**
+   * Returns true if this command was not understood.
+   *
    * @return true if this command was not understood.
    */
   public boolean isUnknown() {
-    return (commandWord == CommandWord.UNKNOWN);
+    return commandWord == CommandWord.UNKNOWN;
   }
 
   /**
+   * Returns true if the command has a second word.
+   *
    * @return true if the command has a second word.
    */
   public boolean hasSecondWord() {
-    return (secondWord != null);
+    return secondWord != null;
   }
 }
 

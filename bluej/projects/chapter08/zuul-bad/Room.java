@@ -10,7 +10,7 @@
  * to the neighboring room, or null if there is no exit in that direction.
  * 
  * @author  Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * @version 7.0
  */
 public class Room 
 {
@@ -21,9 +21,8 @@ public class Room
     public Room westExit;
 
     /**
-     * Create a room described "description". Initially, it has
-     * no exits. "description" is something like "a kitchen" or
-     * "an open court yard".
+     * Create a room described "description". Initially, it has no exits. 
+     * "description" is something like "a kitchen" or "an open court yard".
      * @param description The room's description.
      */
     public Room(String description) 
@@ -62,5 +61,4 @@ public class Room
     {
         return description;
     }
-
 }
