@@ -13,12 +13,13 @@ import java.util.Iterator;
  * stores a reference to the neighboring room.
  *
  * @author Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * @version 7.2
  */
 
 public class Room {
   private String description;
-  private HashMap<String, Room> exits;        // stores exits of this room.
+  // stores exits of this room.
+  private HashMap<String, Room> exits;
 
   /**
    * Create a room described "description". Initially, it has

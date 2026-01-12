@@ -12,14 +12,13 @@
  *  executes the commands that the parser returns.
  * 
  * @author  Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * @version 7.0
  */
-
 public class Game 
 {
     private Parser parser;
     private Room currentRoom;
-        
+    
     /**
      * Create the game and initialise its internal map.
      */
@@ -50,11 +49,12 @@ public class Game
         lab.setExits(outside, office, null, null);
         office.setExits(null, null, null, lab);
 
-        currentRoom = outside;  // start game outside
+        // start game outside
+        currentRoom = outside;  
     }
 
     /**
-     *  Main play routine.  Loops until end of play.
+     *  Main play routine. Loops until end of play.
      */
     public void play() 
     {            
@@ -62,7 +62,7 @@ public class Game
 
         // Enter the main command loop.  Here we repeatedly read commands and
         // execute them until the game is over.
-                
+        
         boolean finished = false;
         while (! finished) {
             Command command = parser.getCommand();
@@ -206,7 +206,8 @@ public class Game
             return false;
         }
         else {
-            return true;  // signal that we want to quit
+            // signal that we want to quit
+            return true;  
         }
     }
 }

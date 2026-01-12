@@ -38,18 +38,29 @@ public class Responder {
   }
 
 
+  /**
+   * Generate a response based on the input words.
+   *
+   * @param words A set of words from the input line
+   * @return A string that should be displayed as the response
+   */
   public String generateResponse(HashSet<String> words) {
-    for (String word : words) {
-      String response = responseMap.get(word);
-      if (response != null) {
-        return response;
-      }
+    String response = null;
+
+    // First check if any words from the input line are known keywords.
+    // If so, pick the response associated with the first one we find.
+    Iterator<String> iterator = words.iterator();
+    while (iterator.hasNext() && response == null) {
+        String word = iterator.next();
+        response = this.responseMap.get(word);
     }
 
-    // If we get here, none of the words from the input line was recognized.
-    // In this case we pick one of our default responses (what we say when
-    // we cannot think of anything else to say...)
-    return pickDefaultResponse();
+    // If we did not find any matching words, pick a default response.
+    if (response == null) {
+      response = pickDefaultResponse();
+    }
+
+    return response;
   }
 
   /**

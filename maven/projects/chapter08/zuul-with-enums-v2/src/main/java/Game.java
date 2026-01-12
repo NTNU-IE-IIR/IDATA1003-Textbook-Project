@@ -12,9 +12,8 @@
  * executes the commands that the parser returns.
  *
  * @author Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * @version 7.3
  */
-
 public class Game {
   private Parser parser;
   private Room currentRoom;
@@ -54,7 +53,8 @@ public class Game {
 
     office.setExit("west", lab);
 
-    currentRoom = outside;  // start game outside
+    // start game outside
+    currentRoom = outside;
   }
 
   /**
@@ -65,7 +65,6 @@ public class Game {
 
     // Enter the main command loop.  Here we repeatedly read commands and
     // execute them until the game is over.
-
     boolean finished = false;
     while (!finished) {
       Command command = parser.getCommand();
@@ -98,21 +97,10 @@ public class Game {
     CommandWord commandWord = command.getCommandWord();
 
     switch (commandWord) {
-      case UNKNOWN:
-        System.out.println("I don't know what you mean...");
-        break;
-
-      case HELP:
-        printHelp();
-        break;
-
-      case GO:
-        goRoom(command);
-        break;
-
-      case QUIT:
-        wantToQuit = quit(command);
-        break;
+      case UNKNOWN -> System.out.println("I don't know what you mean...");
+      case HELP -> printHelp();
+      case GO -> goRoom(command);
+      case QUIT -> wantToQuit = quit(command);
     }
     return wantToQuit;
   }
@@ -167,7 +155,8 @@ public class Game {
       System.out.println("Quit what?");
       return false;
     } else {
-      return true;  // signal that we want to quit
+      // signal that we want to quit
+      return true;
     }
   }
 }
