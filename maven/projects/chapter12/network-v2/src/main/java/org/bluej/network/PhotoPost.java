@@ -1,4 +1,7 @@
+
 package org.bluej.network;
+
+import java.util.ArrayList;
 
 /**
  * This class stores information about a post in a social network news feed.

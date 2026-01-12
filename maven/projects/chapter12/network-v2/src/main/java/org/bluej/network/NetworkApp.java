@@ -9,10 +9,10 @@ public class NetworkApp {
    */
   public static void main(String[] args) {
     NewsFeed feed = new NewsFeed();
-    feed.addMessagePost(new MessagePost("Arne", "Hello, world!"));
-    feed.addMessagePost(new MessagePost("Leif", "Fun day out today!"));
-    feed.addPhotoPost(new PhotoPost("Jon", "bilde.jpg", "Sunset"));
-    feed.addPhotoPost(new PhotoPost("Lise", "mountain.jpg", "Hike"));
+    feed.addPost(new MessagePost("Arne", "Hello, world!"));
+    feed.addPost(new MessagePost("Leif", "Fun day out today!"));
+    feed.addPost(new PhotoPost("Jon", "bilde.jpg", "Sunset"));
+    feed.addPost(new PhotoPost("Lise", "mountain.jpg", "Hike"));
 
     feed.show();
   }

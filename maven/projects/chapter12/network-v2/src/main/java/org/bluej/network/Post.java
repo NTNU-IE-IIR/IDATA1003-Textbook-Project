@@ -64,8 +64,8 @@ public class Post {
 
   /**
    * Display the details of this post.
-   *
-   * <p>(Currently: Print to the text terminal. This is simulating display
+   * <p>
+   * (Currently: Print to the text terminal. This is simulating display
    * in a web browser for now.)
    */
   public void display() {
